@@ -1,0 +1,15 @@
+<snippet>
+	<content><![CDATA[
+void floyd_warshall(int n)
+{
+	for(int k=1; k<=n; k++)
+		for(int i=1; i<=n; i++)
+			for(int j=1; j<=n; j++)
+				d[i][j] = Min(d[i][j],d[i][k]+d[k][j]);
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>floyd-warshall</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
