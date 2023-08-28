@@ -1,0 +1,33 @@
+<snippet>
+	<content><![CDATA[
+int inf = 1000000000;
+
+struct Edge{
+	int u,v,cost;
+};
+vector<Edge> edges;
+int N = 2500;
+vector<int> d(N+1,inf);
+
+void Bellman_Ford(int v)
+{
+	d[v] = 0;
+	bool ok = false;
+	while(1)
+	{
+		for(auto a : edges)
+			if(d[a.u] < inf){
+				if(d[a.v] > (d[a.u] + a.cost)){
+					d[a.v] = d[a.u]+a.cost;
+					ok = true;
+				}
+			}
+		if(!ok) break;	
+	}
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>bellman</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
